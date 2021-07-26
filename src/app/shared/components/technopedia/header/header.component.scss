@@ -1,43 +1,174 @@
 @import "../../../../../styles/color.scss";
+
 .navbar-title {
-    font-size: 1.8rem;
-    color: $color-dark-charcoal;
-    font-weight: bold;
+  font-size: 1.8rem;
+  color: $color-dark-charcoal;
+  font-weight: bold;
+  border-left: 1px solid $color-light-grey !important;
+}
+.navbar-toggler {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+}
+#navbarNoScroll {
+    flex-direction: row;
 }
 
-#navbarScroll ul li a {
+#navbarScroll ul li a,
+#navbarNoScroll li a {
+  line-height: 55px;
+  font-size: 1.2rem;
+}
+
+#navbarScroll ul li,
+#navbarNoScroll li {
+  cursor: pointer;
+  border-left: 1px solid $color-light-grey !important;
+}
+
+#navbarScroll ul li:hover,
+#navbarNoScroll li:hover {
+  background-color: $color-theme;
+}
+
+#navbarScroll ul li:hover a i,
+#navbarScroll ul li:hover a span,
+#navbarNoScroll li:hover a i,
+#navbarNoScroll li:hover a span {
+  color: $color-white;
+}
+
+#navbarScroll ul li a i,
+#navbarNoScroll li a i {
+  color: $color-dark-charcoal;
+}
+
+#navbarScroll ul li a span,
+#navbarNoScroll li a span {
+  color: $color-dark-charcoal;
+  font-weight: bold;
+}
+
+#navbarNoScroll li a img {
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  border: 2px solid $color-dark-charcoal;
+}
+
+#navbarScroll ul li:hover a img,
+#navbarNoScroll li:hover a img {
+  border: 2px solid $color-white;
+}
+
+.language-dropdown {
+  list-style-type: none;
+  padding: 0;
+  position: absolute;
+  background-color: $color-white;
+  display: block;
+  width: 160px;
+  right: 112px;
+  top: 72px;
+  transform-origin: 100% 0px;
+  opacity: 1;
+  transform: scaleX(1) scaleY(1);
+}
+
+.language-dropdown li {
+  height: 40px;
+  border-bottom: 1px solid $color-light-grey;
+  cursor: pointer;
+}
+
+.language-dropdown li a {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 40px !important;
+  padding-left: 10px;
+}
+
+.language-dropdown li:hover {
+  background-color: $color-theme;
+}
+
+.language-dropdown li:hover a span {
+  color: $color-white;
+}
+.navbar-title {
+    height: 100%;
     line-height: 55px;
-    font-size: 1.2rem;
 }
 
-#navbarScroll ul li {
-    border-left: 1px solid $color-light-grey !important;
+.navbar-title img {
+  width: 35px;
+  height: 40px;
+  margin-bottom: 5px;
 }
 
-#navbarScroll ul li:hover {
-    background-color: $color-rebecca-blue;
+//Media Queries
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .large-screen {
+        display: none;
+    }
+    .small-screen {
+        display: flex;
+    }
+    .owner {
+        border-right: 1px solid $color-light-grey;
+    }
 }
 
-#navbarScroll ul li:hover a i, #navbarScroll ul li:hover a span {
-    color: $color-white;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .large-screen {
+        display: none;
+    }
+    .small-screen {
+        display: flex;
+    }
+    .owner {
+        border-right: 1px solid $color-light-grey;
+    }
 }
 
-#navbarScroll ul li a i {
-    color: $color-rebecca-blue;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .large-screen {
+        display: none;
+    }
+    .small-screen {
+        display: flex;
+    }
+    .owner {
+        border-right: 1px solid $color-light-grey;
+    }
 }
 
-#navbarScroll ul li a span {
-    color: $color-dark-charcoal;
-    font-weight: bold;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .large-screen {
+        display: flex;
+    }
+    .small-screen {
+        display: none;
+    }
+    .owner {
+        border-right: 0;
+    }
 }
 
-#navbarScroll ul li a img {
-    width: 30px;
-    height: 30px;
-    border-radius: 25px;
-    border: 2px solid $color-rebecca-blue;
-}
-
-#navbarScroll ul li:hover a img {
-    border: 2px solid $color-white;
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .large-screen {
+        display: flex;
+    }
+    .small-screen {
+        display: none;
+    }
+    .owner {
+        border-right: 0;
+    }
 }
