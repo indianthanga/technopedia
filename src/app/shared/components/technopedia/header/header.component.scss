@@ -1,0 +1,43 @@
+@import "../../../../../styles/color.scss";
+.navbar-title {
+    font-size: 1.8rem;
+    color: $color-dark-charcoal;
+    font-weight: bold;
+}
+
+#navbarScroll ul li a {
+    line-height: 55px;
+    font-size: 1.2rem;
+}
+
+#navbarScroll ul li {
+    border-left: 1px solid $color-light-grey !important;
+}
+
+#navbarScroll ul li:hover {
+    background-color: $color-rebecca-blue;
+}
+
+#navbarScroll ul li:hover a i, #navbarScroll ul li:hover a span {
+    color: $color-white;
+}
+
+#navbarScroll ul li a i {
+    color: $color-rebecca-blue;
+}
+
+#navbarScroll ul li a span {
+    color: $color-dark-charcoal;
+    font-weight: bold;
+}
+
+#navbarScroll ul li a img {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    border: 2px solid $color-rebecca-blue;
+}
+
+#navbarScroll ul li:hover a img {
+    border: 2px solid $color-white;
+}
