@@ -44,12 +44,12 @@
 
 #navbarScroll ul li a i,
 #navbarNoScroll li a i {
-  color: $color-dark-charcoal;
+  color: $color-theme;
 }
 
 #navbarScroll ul li a span,
 #navbarNoScroll li a span {
-  color: $color-dark-charcoal;
+  color: $color-theme;
   font-weight: bold;
 }
 
@@ -104,6 +104,7 @@
   font-weight: bold;
   line-height: 40px !important;
   padding-left: 10px;
+  color: $color-white;
 }
 
 .language-dropdown li:hover,
@@ -186,6 +187,7 @@
 @media only screen and (min-width: 992px) {
   .large-screen {
     display: flex;
+    height: 70px;
   }
   .small-screen {
     display: none;
@@ -205,6 +207,7 @@
 @media only screen and (min-width: 1200px) {
   .large-screen {
     display: flex;
+    height: 70px;
   }
   .small-screen {
     display: none;
@@ -216,41 +219,5 @@
     height: 70px !important;
     margin-left: auto !important;
     background-color: $color-white;
-  }
-}
-
-@keyframes icon-move {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(-5deg);
-  }
-  20% {
-    transform: rotate(5deg);
-  }
-  30% {
-    transform: rotate(0deg);
-  }
-  40% {
-    transform: rotate(5deg);
-  }
-  50% {
-    transform: rotate(-5deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  70% {
-    transform: rotate(-5deg);
-  }
-  80% {
-    transform: rotate(5deg);
-  }
-  90% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-5deg);
   }
 }

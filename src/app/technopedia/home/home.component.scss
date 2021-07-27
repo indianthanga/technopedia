@@ -2,6 +2,12 @@
 .technology-stack h3, .technology-stack .card h5 {
     font-weight: bold;
 }
+.technology-stack h3, .technology-stack h5 {
+    color: $color-theme;
+}
+.technology-stack .card h5 {
+    margin: 0 !important;
+}
 .technology-stack hr {
     height: 0.5px !important;
 }
@@ -11,6 +17,6 @@
 .technology-stack .card:hover {
     background-color: $color-theme;
 }
-.technology-stack .card:hover h5, .technology-stack .card:hover p {
+.technology-stack .card:hover h5 {
     color: $color-white;
 }
