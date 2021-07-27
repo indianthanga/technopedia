@@ -1,0 +1,16 @@
+@import "../../../styles/color.scss";
+.technology-stack h3, .technology-stack .card h5 {
+    font-weight: bold;
+}
+.technology-stack hr {
+    height: 0.5px !important;
+}
+.technology-stack .card {
+    cursor: pointer;
+}
+.technology-stack .card:hover {
+    background-color: $color-theme;
+}
+.technology-stack .card:hover h5, .technology-stack .card:hover p {
+    color: $color-white;
+}

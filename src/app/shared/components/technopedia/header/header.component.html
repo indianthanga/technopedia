@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-custom m-0 p-0 h-70px">
+<nav class="navbar navbar-expand-lg navbar-custom m-0 p-0 h-70px border-bottom-1px-solid-light-grey">
   <div class="container-fluid h-100pt p-0">
     <a class="navbar-brand navbar-title ps-3" href="#">
       <span>Techn</span>
@@ -6,7 +6,7 @@
       <span>pedia</span>
     </a>
     <ul class="navbar-nav ms-auto small-screen" id="navbarNoScroll">
-      <li class="nav-item" (click)="languageDisplay = !languageDisplay">
+      <li #languageDropDown class="nav-item" (click)="languageDisplay = !languageDisplay;">
         <a class="nav-link active ms-2 me-2">
           <i class="fas fa-language"></i>
         </a>
@@ -16,9 +16,9 @@
           <i class="fas fa-expand"></i>
         </a>
       </li>
-      <li class="nav-item owner">
+      <li #authorDropDown class="nav-item author" (click)="authorDisplay = !authorDisplay">
         <a class="nav-link active ms-2 me-2">
-          <img src="assets/images/owner.jpg" />
+          <img src="assets/images/author.jpg" />
         </a>
       </li>
     </ul>
@@ -27,7 +27,7 @@
       <i class="fas fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse h-100pt" id="navbarScroll">
-      <ul class="navbar-nav ms-auto my-2 my-lg-0 h-100pt">
+      <ul class="navbar-nav ms-auto my-2 my-lg-0 h-100pt navbar-collapsive">
         <li class="nav-item">
           <a class="nav-link active ms-2 me-3">
             <i class="fas fa-home m-2"></i>
@@ -40,10 +40,16 @@
             <span class="">Contents</span>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active ms-2 me-3">
+            <i class="fas fa-thumbs-up m-2"></i>
+            <span class="">Credits</span>
+          </a>
+        </li>
       </ul>
     </div>
     <ul class="navbar-nav ms-auto large-screen" id="navbarNoScroll">
-      <li class="nav-item" (click)="languageDisplay = !languageDisplay">
+      <li #languageDropDown class="nav-item" (click)="languageDisplay = !languageDisplay">
         <a class="nav-link active ms-2 me-2">
           <i class="fas fa-language"></i>
         </a>
@@ -53,9 +59,9 @@
           <i class="fas fa-expand"></i>
         </a>
       </li>
-      <li class="nav-item owner">
+      <li #authorDropDown class="nav-item author" (click)="authorDisplay = !authorDisplay">
         <a class="nav-link active ms-2 me-2">
-          <img src="assets/images/owner.jpg" />
+          <img src="assets/images/author.jpg" />
         </a>
       </li>
     </ul>
@@ -67,5 +73,13 @@
   </li>
   <li>
     <a><span class="">Tamil</span></a>
+  </li>
+</ul>
+<ul *ngIf="authorDisplay" class="user-dropdown">
+  <li>
+    <a><span class="">Profile</span></a>
+  </li>
+  <li>
+    <a><span class="">Contact</span></a>
   </li>
 </ul>

@@ -1,1 +1,55 @@
-<div class="container-fluid bg-color-light-grey h-100px"></div>
+<div class="container-fluid bg-color-white">
+    <div class="row h-500px bg-color-rebecca-blue">
+
+    </div>
+    <div class="row h-40px"></div>
+    <div class="row bg-color-white">
+        <div class="container-fluid technology-stack">
+            <div class="row">
+                <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h3 class="txt-align-center">Technologies Stack</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-xs-12 col-sm-12 col-md-3 col-lg-3"></div>
+                <div class="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h5 class="txt-align-center">Wherever you go, technologies are there. <br>It is better to know, at
+                        least few.</h5>
+                    <hr />
+                </div>
+                <div class="col-12 col-xs-12 col-sm-12 col-md-3 col-lg-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="container-fluid technology-stack">
+                        <div *ngFor="let stack of technologiesStack" class="row">
+                            <div *ngFor="let s of stack" class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{s.name}}</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to additional content. This content is a little bit longer.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="container-fluid technology-stack">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">More...</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
