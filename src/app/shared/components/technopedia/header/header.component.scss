@@ -104,12 +104,19 @@
   font-weight: bold;
   line-height: 40px !important;
   padding-left: 10px;
-  color: $color-white;
+  color: $color-theme;
 }
 
 .language-dropdown li:hover,
 .user-dropdown li:hover {
   background-color: $color-theme;
+}
+
+.active {
+  background-color: $color-theme;
+}
+.active-text {
+  color: $color-white !important;
 }
 
 .language-dropdown li:hover a span,
