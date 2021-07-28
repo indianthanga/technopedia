@@ -85,10 +85,12 @@
 
 .language-dropdown {
   right: 112px;
+  z-index: 10001;
 }
 
 .user-dropdown {
   right: 0px;
+  z-index: 10001;
 }
 
 .language-dropdown li,

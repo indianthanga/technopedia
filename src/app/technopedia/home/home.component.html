@@ -1,8 +1,62 @@
 <div class="container-fluid bg-color-white">
     <div class="row h-500px bg-color-theme">
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 p-0 carousel">
+            <div class="left h-490px">
+                <i class="fas fa-chevron-left" (click)="movePrev()"></i>
+            </div>
+            <div class="main">
+                <div *ngIf="carouselIndex == -1" class="container-fluid p-0 h-490px carousel-1">
+                    <div class="row m-0 h-300px">
+                        <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <img class="left-img" src="assets/images/logo.png" />
+                        </div>
+                        <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <img class="right-img" src="assets/images/logo.png" />
+                        </div>
+                    </div>
+                    <div class="row m-0 h-190px">
+                        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <br />
+                            <h3>There are <span class="color-theme">Known</span>. There are <span
+                                    class="color-theme">Unknown</span>. <br /><br />Let us make everything
+                                <del>Un</del><span class="color-theme">Known.</span>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div *ngFor="let carousel of carousels; let i = index">
+                    <div class="container-fluid p-0 h-490px carousel-many" *ngIf="carouselIndex == i">
+                        <div class="row m-0 h-120px"></div>
+                        <div class="row m-0 h-100px">
+                            <h1>{{carousel.name}}</h1>
+                        </div>
+                        <div class="row m-0 h-100px">
+                            <h5>{{carousel.content}}</h5>
+                        </div>
+                        <div class="row m-0 h-100px">
+                            <h6>- {{carousel.author}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right h-490px">
+                <i class="fas fa-chevron-right" (click)="moveNext()"></i>
+            </div>
+            <div class="bottom">
+                <div class="carousel-highlighter" [ngClass]="{'on': carouselIndex==-1}" (click)="moveCurrent(-1)"></div>
+                <div *ngFor="let carousel of carousels; let i = index">
+                    <div class="carousel-highlighter" [ngClass]="{'on': carouselIndex==i}" (click)="moveCurrent(i)">
 
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row h-40px"></div>
+    <div class="row h-40px">
+        <div *ngFor="let carousel of carousels; let i = index">
+            <div class="round round-selected"></div>
+        </div>
+    </div>
     <div class="row bg-color-white">
         <div class="container-fluid technology-stack">
             <div class="row">
