@@ -5,3 +5,7 @@ $color-light-grey: #dddddd;
 $color-snow: #f9f9f9;
 
 $color-theme: $color-rebecca-blue;
+
+.color-theme {
+    color: $color-theme !important;
+}
