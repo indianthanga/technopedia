@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   title: string = 'Technopedia';
   languageDisplay: boolean = false;
   authorDisplay: boolean = false;
+  menuDisplay: boolean = false;
   @ViewChild('languageDropDown') languageDropDown!: ElementRef;
   @ViewChild('authorDropDown') authorDropDown!: ElementRef;
 

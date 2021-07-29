@@ -14,6 +14,9 @@
   outline: 0;
   box-shadow: none;
 }
+.navbar-toggler i {
+  color: $color-theme;
+}
 #navbarNoScroll {
   flex-direction: row;
 }
@@ -61,7 +64,7 @@
   width: 30px;
   height: 30px;
   border-radius: 25px;
-  border: 2px solid $color-dark-charcoal;
+  border: 2px solid $color-theme;
 }
 
 #navbarScroll ul li:hover a img,
@@ -136,6 +139,10 @@
   margin-bottom: 5px;
 }
 
+#navbarScroll {
+  z-index: 10001;
+}
+
 //Media Queries
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -152,6 +159,9 @@
     height: auto !important;
     margin: 0 !important;
     background-color: $color-white;
+  }
+  #navbarScroll .navbar-collapsive li {
+    border-bottom: 1px solid $color-light-grey;
   }
 }
 
@@ -171,6 +181,9 @@
     margin: 0 !important;
     background-color: $color-white;
   }
+  #navbarScroll .navbar-collapsive li {
+    border-bottom: 1px solid $color-light-grey;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -189,6 +202,9 @@
     height: auto !important;
     margin: 0 !important;
     background-color: $color-white;
+  }
+  #navbarScroll .navbar-collapsive li {
+    border-bottom: 1px solid $color-light-grey;
   }
 }
 
