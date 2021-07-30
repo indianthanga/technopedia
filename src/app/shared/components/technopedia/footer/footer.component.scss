@@ -20,6 +20,9 @@
     cursor: pointer;
     font-weight: bold;
 }
+.footer .menu h5:hover {
+    text-decoration: underline;
+}
 .footer .copyright h5 {
     color: $color-white;
     text-align: center;

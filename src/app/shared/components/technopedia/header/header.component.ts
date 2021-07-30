@@ -1,4 +1,4 @@
-import { ElementRef, HostListener, Inject, Renderer2 } from '@angular/core';
+import { ElementRef, HostListener, Inject } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
@@ -17,9 +17,13 @@ export class HeaderComponent implements OnInit {
   @ViewChild('authorDropDown') authorDropDown!: ElementRef;
   element: any;
   constructor(
-    private renderer: Renderer2,
     @Inject(DOCUMENT) private document: any
   ) {}
+
+  @HostListener('document:click', ['$event']) onDocumentClick() {
+    this.authorDisplay = false;
+    this.languageDisplay = false;
+  }
 
   ngOnInit(): void {
     this.element = this.document.documentElement;
