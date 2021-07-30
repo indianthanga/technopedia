@@ -1,25 +1,40 @@
 <nav class="navbar navbar-expand-lg navbar-custom m-0 p-0 h-70px border-bottom-1px-solid-light-grey">
-  <div class="container-fluid h-100pt p-0">
+  <div class="container-fluid h-100pt p-0 border-bottom-1px-solid-light-grey">
     <a class="navbar-brand navbar-title ps-3" href="#">
       <span>Techn</span>
       <img src="assets/images/logo.png" />
       <span>pedia</span>
     </a>
-    <ul class="navbar-nav ms-auto small-screen" id="navbarNoScroll">
-      <li #languageDropDown class="nav-item" (click)="languageDisplay = !languageDisplay;">
+    <ul class="navbar-nav ms-auto small-screen navbar-no-scroll">
+      <li #languageDropDown class="nav-item"
+        (click)="languageDisplay = !languageDisplay; authorDisplay = false; $event.stopPropagation();">
         <a class="nav-link  ms-2 me-2">
           <i class="fas fa-language"></i>
         </a>
+        <ul *ngIf="languageDisplay" class="language-dropdown">
+          <li>
+            <a><span class="">English</span></a>
+          </li>
+          <li>
+            <a><span class="">Tamil</span></a>
+          </li>
+        </ul>
       </li>
       <li class="nav-item">
         <a class="nav-link  ms-2 me-2">
           <i class="fas fa-expand"></i>
         </a>
       </li>
-      <li #authorDropDown class="nav-item author" (click)="authorDisplay = !authorDisplay">
+      <li #authorDropDown class="nav-item author"
+        (click)="authorDisplay = !authorDisplay; languageDisplay = false; $event.stopPropagation();">
         <a class="nav-link  ms-2 me-2">
           <img src="assets/images/author.jpg" />
         </a>
+        <ul *ngIf="authorDisplay" class="user-dropdown">
+          <li [routerLink]="['/technopedia/profile']">
+            <a><span class="">Profile</span></a>
+          </li>
+        </ul>
       </li>
     </ul>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
@@ -48,38 +63,37 @@
         </li>
       </ul>
     </div>
-    <ul class="navbar-nav ms-auto large-screen" id="navbarNoScroll">
-      <li #languageDropDown class="nav-item" (click)="languageDisplay = !languageDisplay">
+    <ul class="navbar-nav ms-auto large-screen navbar-no-scroll">
+      <li #languageDropDown class="nav-item"
+        (click)="languageDisplay = !languageDisplay; authorDisplay = false; $event.stopPropagation();">
         <a class="nav-link  ms-2 me-2">
           <i class="fas fa-language"></i>
         </a>
+        <ul *ngIf="languageDisplay" class="language-dropdown">
+          <li>
+            <a><span class="">English</span></a>
+          </li>
+          <li>
+            <a><span class="">Tamil</span></a>
+          </li>
+        </ul>
       </li>
       <li class="nav-item" (click)="fullScreenToggle()">
         <a class="nav-link  ms-2 me-2">
           <i class="fas fa-expand"></i>
         </a>
       </li>
-      <li #authorDropDown class="nav-item author" (click)="authorDisplay = !authorDisplay">
+      <li #authorDropDown class="nav-item author"
+        (click)="authorDisplay = !authorDisplay; languageDisplay = false; $event.stopPropagation();">
         <a class="nav-link  ms-2 me-2">
           <img src="assets/images/author.jpg" />
         </a>
+        <ul *ngIf="authorDisplay" class="user-dropdown">
+          <li [routerLink]="['/technopedia/profile']">
+            <a><span class="">Profile</span></a>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
 </nav>
-<ul *ngIf="languageDisplay" class="language-dropdown">
-  <li>
-    <a><span class="">English</span></a>
-  </li>
-  <li>
-    <a><span class="">Tamil</span></a>
-  </li>
-</ul>
-<ul *ngIf="authorDisplay" class="user-dropdown">
-  <li>
-    <a><span class="">Profile</span></a>
-  </li>
-  <li>
-    <a><span class="">Contact</span></a>
-  </li>
-</ul>
