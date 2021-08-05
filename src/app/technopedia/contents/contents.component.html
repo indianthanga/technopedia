@@ -1,1 +1,46 @@
 <div class="h-70px"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="sidebar p-0">
+            <ul>
+                <li *ngFor="let content of contents; let i = index" (click)="content.collapsed = !content.collapsed;collapseTopic(i);$event.stopPropagation();">
+                    <a>
+                        <i class="{{content.icon}} m-2"></i>
+                        <span>{{content.name}}</span>
+                        <i *ngIf="content.collapsed" class="fas fa-angle-right caret"></i>
+                        <i *ngIf="!content.collapsed" class="fas fa-angle-down caret"></i>
+                    </a>
+                    <ul *ngIf="!content.collapsed">
+                        <li *ngFor="let year of content.children; let j = index" (click)="year.collapsed = !year.collapsed; collapseYear(i, j); $event.stopPropagation();">
+                            <a>
+                                <i class="fas fa-calendar fa-2px m-2"></i>
+                                <span>{{year.name}}</span>
+                                <i *ngIf="year.collapsed" class="fas fa-angle-right caret"></i>
+                                <i *ngIf="!year.collapsed" class="fas fa-angle-down caret"></i>
+                            </a>    
+                            <ul *ngIf="!year.collapsed">
+                                <li *ngFor="let month of year.children"  (click)="month.collapsed = !month.collapsed; $event.stopPropagation();">
+                                    <a>
+                                        <i class="fas fa-calendar-alt fa-2px m-2"></i>
+                                        <span>{{month.name}}</span>
+                                        <i *ngIf="month.collapsed" class="fas fa-angle-right caret"></i>
+                                        <i *ngIf="!month.collapsed" class="fas fa-angle-down caret"></i>
+                                    </a>    
+                                    <ul *ngIf="!month.collapsed">
+                                        <li *ngFor="let info of month.children" class="content" (click)="$event.stopPropagation();" [routerLink]="[ '/technopedia/contents',content.value, year.value, month.value, info.value]">
+                                            <a>
+                                                <i class="fas fa-genderless m-2"></i>
+                                                <span>{{info.name}}</span>
+                                            </a>    
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main"></div>
+    </div>
+</div>

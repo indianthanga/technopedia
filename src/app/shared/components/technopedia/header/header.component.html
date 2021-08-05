@@ -7,7 +7,7 @@
     </a>
     <ul class="navbar-nav ms-auto small-screen navbar-no-scroll">
       <li #languageDropDown class="nav-item"
-        (click)="languageDisplay = !languageDisplay; authorDisplay = false; $event.stopPropagation();">
+        (click)="languageDisplay = !languageDisplay; authorDisplay = false; colorDisplay = false; $event.stopPropagation();">
         <a class="nav-link  ms-2 me-2">
           <i class="fas fa-language"></i>
         </a>
@@ -26,7 +26,7 @@
         </a>
       </li>
       <li #authorDropDown class="nav-item author"
-        (click)="authorDisplay = !authorDisplay; languageDisplay = false; $event.stopPropagation();">
+        (click)="authorDisplay = !authorDisplay; languageDisplay = false; colorDisplay = false; $event.stopPropagation();">
         <a class="nav-link  ms-2 me-2">
           <img src="assets/images/author.jpg" />
         </a>
@@ -64,8 +64,8 @@
       </ul>
     </div>
     <ul class="navbar-nav ms-auto large-screen navbar-no-scroll">
-      <li #languageDropDown class="nav-item"
-        (click)="languageDisplay = !languageDisplay; authorDisplay = false; $event.stopPropagation();">
+      <li #languageDropDown class="nav-item" 
+        (click)="languageDisplay = !languageDisplay; authorDisplay = false; colorDisplay = false; $event.stopPropagation();">
         <a class="nav-link  ms-2 me-2">
           <i class="fas fa-language"></i>
         </a>
@@ -78,13 +78,24 @@
           </li>
         </ul>
       </li>
+      <li class="nav-item"
+        (click)="colorDisplay = !colorDisplay; languageDisplay = false; authorDisplay = false; $event.stopPropagation();">
+        <a class="nav-link  ms-2 me-2">
+          <i class="fas fa-palette"></i>
+        </a>
+        <ul *ngIf="colorDisplay" class="color-dropdown">
+          <li *ngFor="let color of colorList" class="{{color.value}}" (click)="changeColor(color.index)">
+            <a><span class="">{{color.name}}</span></a>
+          </li>
+        </ul>
+      </li>
       <li class="nav-item" (click)="fullScreenToggle()">
         <a class="nav-link  ms-2 me-2">
           <i class="fas fa-expand"></i>
         </a>
       </li>
       <li #authorDropDown class="nav-item author"
-        (click)="authorDisplay = !authorDisplay; languageDisplay = false; $event.stopPropagation();">
+        (click)="authorDisplay = !authorDisplay; languageDisplay = false; colorDisplay = false; $event.stopPropagation();">
         <a class="nav-link  ms-2 me-2">
           <img src="assets/images/author.jpg" />
         </a>

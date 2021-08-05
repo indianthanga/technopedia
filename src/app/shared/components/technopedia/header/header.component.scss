@@ -23,14 +23,14 @@
   box-shadow: none;
 }
 .navbar-toggler i {
-  color: $color-theme;
+  color: $color-rebecca-blue;
 }
 .navbar-no-scroll {
   flex-direction: row;
 }
 
 .navbar-no-scroll li a i {
-  color: $color-theme;
+  color: $color-rebecca-blue;
 }
 
 #navbarScroll ul li a {
@@ -54,7 +54,7 @@
 }
 
 .navbar-no-scroll li:hover {
-  background-color: $color-theme;
+  background-color: $color-rebecca-blue;
 }
 
 .navbar-no-scroll li:hover a i {
@@ -62,7 +62,7 @@
 }
 
 #navbarScroll ul li:hover {
-  background-color: $color-theme;
+  background-color: $color-rebecca-blue;
 }
 
 #navbarScroll ul li:hover a i,
@@ -71,11 +71,11 @@
 }
 
 #navbarScroll ul li a i {
-  color: $color-theme;
+  color: $color-rebecca-blue;
 }
 
 #navbarScroll ul li a span {
-  color: $color-theme;
+  color: $color-rebecca-blue;
   font-weight: bold;
 }
 
@@ -87,7 +87,7 @@
   width: 30px;
   height: 30px;
   border-radius: 25px;
-  border: 2px solid $color-theme;
+  border: 2px solid $color-rebecca-blue;
 }
 
 .navbar-no-scroll li:hover a img {
@@ -95,7 +95,8 @@
 }
 
 .language-dropdown,
-.user-dropdown {
+.user-dropdown,
+.color-dropdown {
   list-style-type: none;
   padding: 0;
   position: absolute;
@@ -106,12 +107,12 @@
   transform-origin: 100% 0px;
   opacity: 1;
   transform: scaleX(1) scaleY(1);
-  color: $color-theme;
+  color: $color-rebecca-blue;
   z-index: 111111;
 }
 
 .language-dropdown {
-  right: 112px;
+  right: 165px;
   z-index: 10001;
 }
 
@@ -120,38 +121,52 @@
   z-index: 10001;
 }
 
+.color-dropdown {
+  right: 112px;
+  z-index: 10001;
+}
+
 .language-dropdown li,
-.user-dropdown li {
+.user-dropdown li,
+.color-dropdown li {
   height: 40px;
   border: 1px solid $color-light-grey;
   cursor: pointer;
 }
 
 .language-dropdown li a,
-.user-dropdown li a {
+.user-dropdown li a,
+.color-dropdown li a {
   font-size: 1rem;
   font-weight: bold;
   line-height: 40px !important;
   padding-left: 10px;
-  color: $color-theme;
+  color: $color-rebecca-blue;
+}
+
+.color-dropdown li a span {
+  color: $color-white !important;
 }
 
 .language-dropdown li:hover,
-.user-dropdown li:hover {
-  background-color: $color-theme;
+.user-dropdown li:hover,
+.color-dropdown li:hover {
+  background-color: $color-rebecca-blue;
 }
 
 .active {
-  background-color: $color-theme;
+  background-color: $color-rebecca-blue;
 }
 .active-text {
   color: $color-white !important;
 }
 
 .language-dropdown li:hover a span,
-.user-dropdown li:hover a span {
+.user-dropdown li:hover a span,
+.color-dropdown li:hover a span {
   color: $color-white;
 }
+
 .navbar-title {
   height: 100%;
   line-height: 55px;

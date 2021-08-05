@@ -1,6 +1,8 @@
 import { ElementRef, HostListener, Inject } from '@angular/core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { SharedService } from 'src/app/core/services/shared.service';
+import { Color, Shared } from 'src/app/core/models/shared.model';
 
 @Component({
   selector: 'app-header',
@@ -11,18 +13,31 @@ export class HeaderComponent implements OnInit {
   title: string = 'Technopedia';
   languageDisplay: boolean = false;
   authorDisplay: boolean = false;
+  colorDisplay: boolean = false;
   menuDisplay: boolean = false;
   fullScreen: boolean = false;
-  @ViewChild('languageDropDown') languageDropDown!: ElementRef;
-  @ViewChild('authorDropDown') authorDropDown!: ElementRef;
-  element: any;
+  colorName: string;
+  colorList: Color[] = [];
+  element: any = "";
   constructor(
-    @Inject(DOCUMENT) private document: any
-  ) {}
+    @Inject(DOCUMENT) private document: any,
+    private sharedService: SharedService
+  ) {
+    this.colorList = Shared.colors;
+    this.colorName = sharedService.getColorName();
+    /*this.sharedService.colorNameObservable.subscribe((value: string) => {
+      console.log(value);
+    });*/ 
+  }
+
+  changeColor(index: number): void {
+    this.sharedService.setColorIndex(index);
+  }
 
   @HostListener('document:click', ['$event']) onDocumentClick() {
     this.authorDisplay = false;
     this.languageDisplay = false;
+    this.colorDisplay = false;
   }
 
   ngOnInit(): void {
