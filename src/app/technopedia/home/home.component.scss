@@ -5,7 +5,7 @@
 }
 .technology-stack h3,
 .technology-stack h5 {
-  color: $color-theme;
+  color: $color-rebecca-blue;
 }
 .technology-stack .card h5 {
   margin: 0 !important;
@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 .technology-stack .card:hover {
-  background-color: $color-theme;
+  background-color: $color-rebecca-blue;
 }
 .technology-stack .card:hover h5 {
   color: $color-white;
@@ -32,7 +32,7 @@
   width: 50px;
   align-items: center;
   font-size: 1.5rem;
-  color: $color-theme;
+  color: $color-rebecca-blue;
   position: absolute;
   z-index: 10000;
   display: flex;
@@ -62,18 +62,18 @@
     height: 20px;
     border-radius: 50%;
     margin: 3px;
-    background-color: $color-theme;
+    background-color: $color-rebecca-blue;
     cursor: pointer;
 }
 .on {
     background-color: $color-white !important;
-    border: 2px solid $color-theme !important;
+    border: 2px solid $color-rebecca-blue !important;
     padding: 2px;
 }
 .carousel .left:hover i,
 .carousel .right:hover i {
   color: $color-white;
-  background-color: $color-theme;
+  background-color: $color-rebecca-blue;
   border-radius: 25px;
   padding-left: 10px;
   padding-right: 10px;

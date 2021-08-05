@@ -18,6 +18,26 @@ const routes: Routes = [
           import('./contents/contents.module').then((m) => m.ContentsModule),
       },
       {
+        path: 'contents/:topic',
+        loadChildren: () =>
+          import('./contents/contents.module').then((m) => m.ContentsModule),
+      },
+      {
+        path: 'contents/:topic/:year',
+        loadChildren: () =>
+          import('./contents/contents.module').then((m) => m.ContentsModule),
+      },
+      {
+        path: 'contents/:topic/:year/:month',
+        loadChildren: () =>
+          import('./contents/contents.module').then((m) => m.ContentsModule),
+      },
+      {
+        path: 'contents/:topic/:year/:month/:content',
+        loadChildren: () =>
+          import('./contents/contents.module').then((m) => m.ContentsModule),
+      },
+      {
         path: 'credits',
         loadChildren: () =>
           import('./credits/credits.module').then((m) => m.CreditsModule),
@@ -28,7 +48,7 @@ const routes: Routes = [
           import('./profile/profile.module').then((m) => m.ProfileModule),
       }
     ],
-  },
+  }
 ];
 
 @NgModule({
